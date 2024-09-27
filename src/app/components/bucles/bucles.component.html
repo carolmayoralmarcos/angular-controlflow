@@ -1,0 +1,44 @@
+<button (click)="onClick()">Agregar nueva serie</button>
+
+<section>
+    @for(serie of arrSeries; track serie.id){
+    <article class="serie">
+        @if($first){
+        <span class="badge bg-danger">NOVEDAD</span>
+        }
+        <h3>{{serie.title}}</h3>
+        <img [src]="serie.image" alt="">
+        <p>Creadores: {{serie.creator}}</p>
+        <p>Canal: {{serie.channel}}</p>
+    </article>
+    }
+</section>
+
+<!-- Tabla con las series -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Creadores</th>
+            <th>Rating</th>
+            <th>Canal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(serie of arrSeries; track serie.id){
+        <tr>
+            <td>{{serie.id}}</td>
+            <td>{{serie.title}}</td>
+            <td>{{serie.creator}}</td>
+            <td>{{serie.rating}}</td>
+            <td>{{serie.channel}}</td>
+            <td>{{$index}}</td>
+            <td>{{$first}}</td>
+            <td>{{$last}}</td>
+            <td>{{$even}}</td>
+            <td>{{$odd}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+<button (click)="onClick()">Muestra / Oculta</button>
+
+@if(mostrar){
+<div>
+    <p>Párrafo para mostrar = TRUE</p>
+</div>
+}@else {
+<p>Párrafo para mostrar = FALSE</p>
+}
+
+<h2>¿Eres mayor de edad?</h2>
+@if (edad >= 18 && edad <= 65) { <p>Eres mayor de edad</p> }
+    @else if(edad < 18){ <p>Eres menor de edad</p> }
+        @else { <p>Número no permitido</p> }
